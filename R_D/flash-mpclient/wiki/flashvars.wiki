@@ -1,0 +1,11 @@
+#summary configuration flashvars
+#labels flashvars,config,settings
+
+= Flashvars =
+
+ * hostname: the ip or server hostname which the client will connect to
+ * port: the port mpd is being served on
+ * dual_socket: false (default) or true; magic or more magic respectively. Seriously though, if you want to use the built-in console, set dual_socket mode on.
+ * debug: integer from 0 upwards, where 0 is off. Refer to debug.html for example of use.
+
+For more installation information see [usage]

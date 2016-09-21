@@ -1,0 +1,30 @@
+ <html>
+	<head>
+		<script type="text/javascript" src="swfobject.js"></script>
+		
+		<script type="text/javascript">
+			
+		window.flashObject=swfobject.embedSWF("mpdClient.swf", "client", "320", "240", "9.0.0",'expressInstall.swf',{hostname:swfobject.getQueryParamValue("hostname")},{},{id:'container'});	
+		
+		</script>
+		<style>
+			body
+			{
+				background-color:#ffffff;
+			}
+		
+			#container
+			{
+				position:relative;
+				width:320px;
+				margin:20px auto;
+			}	
+		</style>
+		
+		
+</head>
+<body>
+	<div id="container"><div id="client"></div></div>
+	
+<body>
+</html>

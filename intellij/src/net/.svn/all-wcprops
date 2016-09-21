@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/45/trunk/src/com/acumen/net
+END
+TelnetSocket.as
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/45/trunk/src/com/acumen/net/TelnetSocket.as
+END
+MpdSocket.as
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/45/trunk/src/com/acumen/net/MpdSocket.as
+END
+TelnetEvent.as
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/src/com/acumen/net/TelnetEvent.as
+END

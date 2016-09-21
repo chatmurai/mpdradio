@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="MpdRadioRemote">
+    <configurations>
+      <configuration name="MpdRadioRemote" target-platform="Mobile" pure-as="true" main-class="Main" output-file="Main.swf" output-folder="$MODULE_DIR$/out/production/MpdRadioRemote">
+        <dependencies target-player="22.0">
+          <entries>
+            <entry library-id="1306e05b-27cb-4b99-8974-bb6968b439b5">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="ad5279cd-fa2e-4255-926f-5a804d090226">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="7a1ff372-1673-4fa3-9ae3-1c7ff3b6bf3c">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="da2bb27f-f9bb-4a48-9260-206ad335a3e6">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="8fde36b1-7020-4444-b84b-7655e2d0841e">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="AIR_SDK_22" />
+        </dependencies>
+        <compiler-options>
+          <option name="additionalOptions" value="-define+=CONFIG::PRODUCTION,false" />
+        </compiler-options>
+        <packaging-air-desktop />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/src/MpdRadioRemote.xml" package-file-name="MpdRadioRemote">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/assets/bitmaps/icons" path-in-package="assets/bitmaps/icons" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-375w-667h@2x.png" path-in-package="Default-375w-667h@2x.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-414w-736h-Landscape@3x.png" path-in-package="Default-414w-736h-Landscape@3x.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-414w-736h@3x.png" path-in-package="Default-414w-736h@3x.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-568h@2x.png" path-in-package="Default-568h@2x.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-Android.png" path-in-package="Default-Android.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-Landscape.png" path-in-package="Default-Landscape.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-Landscape@2x.png" path-in-package="Default-Landscape@2x.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-Portrait.png" path-in-package="Default-Portrait.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default-Portrait@2x.png" path-in-package="Default-Portrait@2x.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default.png" path-in-package="Default.png" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/Default@2x.png" path-in-package="Default@2x.png" />
+          </files-to-package>
+        </packaging-android>
+        <packaging-ios package-file-name="Main" />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="AIR_SDK_22" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="1306e05b-27cb-4b99-8974-bb6968b439b5" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../../../AS3/libs" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="ad5279cd-fa2e-4255-926f-5a804d090226" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/assets/swc/ui.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="7a1ff372-1673-4fa3-9ae3-1c7ff3b6bf3c" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/assets/ane/com.milkmangames.extensions.GAnalytics.ane!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="da2bb27f-f9bb-4a48-9260-206ad335a3e6" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/assets/ane/com.milkmangames.extensions.GoogleServices.ane!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="8fde36b1-7020-4444-b84b-7655e2d0841e" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/assets/swc/as3crypto.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

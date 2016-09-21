@@ -1,0 +1,22 @@
+#EXTM3U
+
+#EXTINF:-1,FIP Radio
+http://audio.scdn.arkena.com/11016/fip-midfi128.mp3
+
+#EXTINF:-1,FIP Jazz
+http://webradiofip2.scdn.arkena.com/webradiofip2.mp3
+
+#EXTINF:-1,FIP Groove
+http://webradiofip3.scdn.arkena.com/webradiofip3.mp3
+
+#EXTINF:-1,FIP World
+http://webradiofip4.scdn.arkena.com/webradiofip4.mp3
+
+#EXTINF:-1,FIP New Music
+http://webradiofip5.scdn.arkena.com/webradiofip5.mp3
+
+#EXTINF:-1,France inter
+http://audio.scdn.arkena.com/11008/franceinter-midfi128.mp3
+
+#EXTINF:-1,Size Radio
+http://size.ice.infomaniak.ch/size-128.mp3

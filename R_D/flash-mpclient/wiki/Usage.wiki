@@ -1,0 +1,9 @@
+=Usage=
+
+== Context Menus ==
+
+Both the playlist and the library uses the right-click context menu extensively. So to add files from the library for instance, you right click on a song, album or artist and then select add from the menu.
+
+== Library ==
+
+This client allows you to both browse the songs from a file system perspective or an indexed library perspective. I prefer the latter, and depending on feedback I may remove the filesystem browser.

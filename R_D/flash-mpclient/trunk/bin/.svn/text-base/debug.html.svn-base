@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<script type="text/javascript" src="swfobject.js"></script>
+		
+		<script type="text/javascript">
+			
+		window.flashObject=swfobject.embedSWF("mpdClient.swf", "container", "320", "240", "9.0.0",'expressInstall.swf',{hostname:swfobject.getQueryParamValue("hostname"),port:swfobject.getQueryParamValue("port"),debugLevel:3,title:'MPD Client : debug mode',dual_socket:true},{},{id:'container'});	
+		
+		/*
+		function showMpdStatus(r)
+		{
+			document.getElementById('status').innerHTML=r;
+		}
+		
+		function showMpdInformation(r)
+		{
+			document.getElementById('information').innerHTML=r;
+		}
+		*/
+		</script>
+		<style>
+			body
+			{
+				background-color:#ffffff;
+			}
+		
+			
+		</style>
+		
+		
+</head>
+<body>
+	<div id="container"></div><br/>
+	<script type="text/javascript" src="js/debug.js" ></script>
+	<table>
+	<tr>
+		<td><textarea id="status" cols="20" rows="12"></textarea><td/>
+		<td><textarea id="info"  cols="20" rows="12"></textarea><td/>
+		<td><textarea id="playlist"  cols="50" rows="12"></textarea><td/>
+	</tr>
+	</table>
+	
+<body>
+</html>

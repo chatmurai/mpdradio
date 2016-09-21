@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/22.0">
+
+	<!-- ###########################################################################################-->
+    <!-- ##################################### GENERIC SECTION #####################################-->
+    <!-- ###########################################################################################-->
+
+	<!-- A universally unique application identifier. Must be unique across all AIR applications.
+	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
+	<!--<id>com.orange.fr.orangepic</id>-->
+    <id>zb.am.mpdradioremote</id>
+
+	<!-- Used as the filename for the application. Required. -->
+	<filename>mpdradioremote</filename>
+
+	<!-- The name that is displayed in the AIR application installer. 
+	May have multiple values for each language. See samples or xsd schema file. Optional. -->
+	<name>mpdradioremote</name>
+	
+	<!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade. 
+	Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
+	An updated version of application must have a versionNumber value higher than the previous version. Required for namespace >= 2.5 . -->
+	<versionNumber>1.0.0</versionNumber>
+		         
+	<!-- A string value (such as "v1", "2.5", or "Alpha 1") that represents the version of the application, as it should be shown to users. Optional. -->
+	<versionLabel>1.0</versionLabel>
+
+	<!-- Description, displayed in the AIR application installer.
+	May have multiple values for each language. See samples or xsd schema file. Optional. -->
+	<description>Zbam mpdradioremote</description>
+
+	<!-- Copyright information. Optional -->
+	<copyright>© Zbam - 2016</copyright>
+
+	<!-- #################################################################################################-->
+    <!-- ##################################### APP BEHAVIOUR SECTION #####################################-->
+    <!-- #################################################################################################-->
+
+	<!-- Settings for the application's initial window. Required. -->
+	<initialWindow>
+	
+		<!-- The main SWF or HTML file of the application. Required. -->
+		<!-- Note: In Flash Builder, the SWF reference is set automatically. -->
+		<content>[This value will be overwritten by Flash Builder in the output app.xml]</content>
+
+        <!-- Whether the app will begin auto-orienting on launch. Optional. Mobile only. Default false -->
+		<autoOrients>false</autoOrients>
+
+        <!-- Whether the app launches in full screen. Optional. Mobile only. Default false -->
+		<fullScreen>true</fullScreen>
+
+        <!-- The render mode for the app (either auto, cpu, gpu, or direct). Optional. Default auto -->
+        <renderMode>cpu</renderMode>
+
+        <!-- Whether the default direct mode rendering context allocates storage for depth and stencil buffers.  Optional.  Default false. -->
+        <!-- <depthAndStencil>false</depthAndStencil> -->
+
+		<!-- Whether or not to pan when a soft keyboard is raised or lowered (either "pan" or "none").  Optional.  Defaults "pan." -->
+		<softKeyboardBehavior>none</softKeyboardBehavior>
+		
+   	<visible>true</visible>
+    </initialWindow>
+
+	<!-- We recommend omitting the supportedProfiles element, -->
+	<!-- which in turn permits your application to be deployed to all -->
+	<!-- devices supported by AIR. If you wish to restrict deployment -->
+	<!-- (i.e., to only mobile devices) then add this element and list -->
+	<!-- only the profiles which your application does support. -->
+	<supportedProfiles>mobileDevice extendedMobileDevice</supportedProfiles>
+
+	<!-- Languages supported by application -->
+	<!-- Only these languages can be specified -->
+	<!-- <supportedLanguages>en de cs es fr it ja ko nl pl pt ru sv tr zh</supportedLanguages> -->
+	<supportedLanguages>fr</supportedLanguages>
+
+	<!-- The icon the system uses for the application. For at least one resolution,
+	specify the path to a PNG file included in the AIR package. Optional. -->
+    <icon>
+        <image16x16>assets/bitmaps/icons/icon_16.png</image16x16>
+        <image29x29>assets/bitmaps/icons/icon_29.png</image29x29>
+        <image32x32>assets/bitmaps/icons/icon_32.png</image32x32>
+        <image36x36>assets/bitmaps/icons/icon_36.png</image36x36>
+        <image40x40>assets/bitmaps/icons/icon_40.png</image40x40>
+        <image48x48>assets/bitmaps/icons/icon_48.png</image48x48>
+        <image50x50>assets/bitmaps/icons/icon_50.png</image50x50>
+        <image57x57>assets/bitmaps/icons/icon_57.png</image57x57>
+        <image58x58>assets/bitmaps/icons/icon_58.png</image58x58>
+        <image60x60>assets/bitmaps/icons/icon_60.png</image60x60>
+        <image72x72>assets/bitmaps/icons/icon_72.png</image72x72>
+        <image76x76>assets/bitmaps/icons/icon_76.png</image76x76>
+        <image80x80>assets/bitmaps/icons/icon_80.png</image80x80>
+        <image100x100>assets/bitmaps/icons/icon_100.png</image100x100>
+        <image114x114>assets/bitmaps/icons/icon_114.png</image114x114>
+        <image120x120>assets/bitmaps/icons/icon_120.png</image120x120>
+        <image128x128>assets/bitmaps/icons/icon_128.png</image128x128>
+        <image144x144>assets/bitmaps/icons/icon_144.png</image144x144>
+        <image152x152>assets/bitmaps/icons/icon_152.png</image152x152>
+        <!--<image167x167>assets/bitmaps/icons/icon_167.png</image167x167>-->
+        <image512x512>assets/bitmaps/icons/icon_512.png</image512x512>
+        <image1024x1024>assets/bitmaps/icons/icon_1024.png</image1024x1024>
+    </icon>
+
+	<!-- ##############################################################################################-->
+    <!-- ##################################### ANDROID SECTION ########################################-->
+    <!-- See https://developer.android.com/guide/topics/manifest/uses-feature-element.html#hw-features -->
+    <!-- ##############################################################################################-->
+
+		<android>
+        <manifestAdditions>
+        <![CDATA[
+			<manifest android:installLocation="auto">
+			
+			<uses-sdk android:minSdkVersion="9" />
+			
+			<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+			<uses-feature android:name="android.hardware.screen.landscape" android:required="true"/>
+
+			<compatible-screens>
+			
+		        <!-- all small size screens -->
+		        <screen android:screenSize="small" android:screenDensity="ldpi" />
+		        <screen android:screenSize="small" android:screenDensity="mdpi" />
+		        <screen android:screenSize="small" android:screenDensity="hdpi" />
+		        <screen android:screenSize="small" android:screenDensity="xhdpi" />
+		        <screen android:screenSize="small" android:screenDensity="480" />
+		        
+		        <!-- all normal size screens -->
+		        <screen android:screenSize="normal" android:screenDensity="ldpi" />
+		        <screen android:screenSize="normal" android:screenDensity="mdpi" />
+		        <screen android:screenSize="normal" android:screenDensity="hdpi" />
+		        <screen android:screenSize="normal" android:screenDensity="xhdpi" />
+		        <screen android:screenSize="normal" android:screenDensity="480" />
+
+		        <!-- all large size screens -->
+		        <screen android:screenSize="large" android:screenDensity="ldpi" />
+		        <screen android:screenSize="large" android:screenDensity="mdpi" />
+		        <screen android:screenSize="large" android:screenDensity="hdpi" />
+		        <screen android:screenSize="large" android:screenDensity="xhdpi" />
+		        <screen android:screenSize="large" android:screenDensity="480" />
+		        
+		    </compatible-screens>
+			
+			<!--Custom URI scheme -->
+			<application> 
+				<activity> 
+				
+                       <intent-filter> 
+                           <action android:name="android.intent.action.MAIN"/> 
+                           <category android:name="android.intent.category.LAUNCHER"/> 
+                       </intent-filter> 
+                       
+                       <intent-filter> 
+                           <action android:name="android.intent.action.VIEW"/> 
+                           <category android:name="android.intent.category.BROWSABLE"/> 
+                           <category android:name="android.intent.category.DEFAULT"/> 
+                           <data android:scheme="zb.am.mpdradioremote"/>
+                       </intent-filter>
+
+				 </activity>
+				 
+               </application>
+			
+			    <!--See the Adobe AIR documentation for more information about setting Google Android permissions-->
+			    <!--Removing the permission android.permission.INTERNET will have the side effect of preventing you from debugging your application on your device-->
+			    <uses-permission android:name="android.permission.INTERNET"/>
+			    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+			    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+			    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+			    
+			    <!--The DISABLE_KEYGUARD and WAKE_LOCK permissions should be toggled together in order to access AIR's SystemIdleMode APIs-->
+			    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+			    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+			    
+			    <!--The ACCESS_NETWORK_STATE and ACCESS_WIFI_STATE permissions should be toggled together in order to use AIR's NetworkInfo APIs-->
+			    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+			    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+			</manifest>
+			
+		]]></manifestAdditions>
+		
+    </android>
+    
+    <!-- #######################################################################################-->
+    <!-- ##################################### IOS SECTION #####################################-->
+    <!-- #######################################################################################-->
+    <!--
+    By default, iOS 9 now requires https over http, this is why the NSAppTransportSecurity key is required to allow insecure connections
+    more here : http://googleadsdeveloper.blogspot.ca/2015/08/handling-app-transport-security-in-ios-9.html
+    and here : https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/
+    -->
+    
+    <iPhone>
+    
+        <InfoAdditions>
+        <![CDATA[
+			<key>UIDeviceFamily</key>
+			<array>
+				<string>1</string>
+				<string>2</string>
+			</array>
+			
+			<key>UIPrerenderedIcon</key> 
+        	<true/>
+        	
+        	<key>UIStatusBarStyle</key> 
+        	<string>UIStatusBarStyleLightContent</string>
+        	
+        	<key>UIRequiredDeviceCapabilities</key> 
+			<array>
+			</array>
+			
+			<key>MinimumOSVersion</key>
+			<string>7.0</string>
+
+			<key>NSAppTransportSecurity</key>
+                <dict>
+                    <key>NSAllowsArbitraryLoads</key>
+                    <true/>
+                </dict>
+			
+			<key>CFBundleURLTypes</key>
+			<array>
+				<dict>
+				
+					<key>CFBundleURLSchemes</key>
+					<array>
+						<string>zb.am.mpdradioremote</string>
+					</array>
+					<key>CFBundleURLName</key>
+					<string>zb.am.mpdradioremote</string>
+                      
+				</dict>
+			</array>
+		]]>
+		</InfoAdditions>
+		
+		<!-- FOR PRODUCTION SET KEY TO FALSE, FOR DEBUGGING SET IT TO TRUE -->
+		<!-- VERY IMPORTANT !!!!!!!!!!!!!!!! YOU MUST SET THIS TO FALSE FOR APPSTORE AND AD-HOC DISTRIBUTION -->
+		<Entitlements>
+        <![CDATA[
+            <key>get-task-allow</key>
+            <true/>
+        ]]>
+	    </Entitlements>
+	    
+	    <requestedDisplayResolution>high</requestedDisplayResolution>
+	    
+	</iPhone>
+	
+	<!-- #######################################################################################-->
+    <!-- ##################################### EXTENSIONS SECTION ##############################-->
+    <!-- #######################################################################################-->
+    <extensions>
+		<extensionID>com.milkmangames.extensions.GAnalytics</extensionID>
+		<extensionID>com.milkmangames.extensions.GoogleServices</extensionID>
+    </extensions>
+    
+</application>

@@ -1,0 +1,5 @@
+= Bringing up the console =
+
+You can bring up a console in FlashMPC that allows you to communicate directly with MPD. To engage the console make sure flash has focus and hit the ` (tilda) key. 
+
+To get the best use from the console it's best to switch the regular mpd status requests onto a separate socket. This can be done very easily using the [flashvars dual_socket flashvar]

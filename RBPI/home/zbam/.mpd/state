@@ -1,0 +1,68 @@
+sw_volume: 100
+audio_device_state:1:My ALSA Device
+state: play
+current: 5
+time: 1196.762000
+random: 0
+repeat: 1
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+song_begin: http://audio.scdn.arkena.com/11016/fip-midfi128.mp3
+Name: fip-midfi128.mp3
+mtime: 0
+song_end
+song_begin: http://webradiofip2.scdn.arkena.com/webradiofip2.mp3
+Name: webradiofip2 - jazz
+mtime: 0
+song_end
+song_begin: http://webradiofip3.scdn.arkena.com/webradiofip3.mp3
+Name: webradiofip3 - groove
+mtime: 0
+song_end
+song_begin: http://webradiofip4.scdn.arkena.com/webradiofip4.mp3
+Name: webradiofip4 - monde
+mtime: 0
+song_end
+song_begin: http://webradiofip5.scdn.arkena.com/webradiofip5.mp3
+Name: webradiofip5 - nouveautes
+mtime: 0
+song_end
+song_begin: http://size.ice.infomaniak.ch/size-128.mp3
+Title: Formation - All The Rest Is Noise EP - All The Rest Is Noise
+Name: Size Radio
+mtime: 0
+song_end
+song_begin: http://audio.scdn.arkena.com/11016/fip-midfi128.mp3
+Name: fip-midfi128.mp3
+mtime: 0
+song_end
+song_begin: http://webradiofip2.scdn.arkena.com/webradiofip2.mp3
+Name: webradiofip2 - jazz
+mtime: 0
+song_end
+song_begin: http://webradiofip3.scdn.arkena.com/webradiofip3.mp3
+Name: webradiofip3 - groove
+mtime: 0
+song_end
+song_begin: http://webradiofip4.scdn.arkena.com/webradiofip4.mp3
+Name: webradiofip4 - monde
+mtime: 0
+song_end
+song_begin: http://webradiofip5.scdn.arkena.com/webradiofip5.mp3
+Name: webradiofip5 - nouveautes
+mtime: 0
+song_end
+song_begin: http://audio.scdn.arkena.com/11008/franceinter-midfi128.mp3
+Name: franceinter-midfi128.mp3
+mtime: 0
+song_end
+song_begin: http://size.ice.infomaniak.ch/size-128.mp3
+Title: Guts - Paradise for all - Brand new revolution
+Name: Size Radio
+mtime: 0
+song_end
+playlist_end

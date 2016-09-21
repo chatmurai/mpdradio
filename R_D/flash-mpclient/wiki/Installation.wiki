@@ -1,0 +1,22 @@
+#labels security,policy
+= Installing =
+
+place the mpdClient.swf and index.html files in a web accessible directory. You'll need to modify the index.html to include the hostname or ip of the mpd daemon, and the port (if not mpd's default of 6600) for more information refer to [flashvars]. I'd also recommend making this rather boring looking page look nice, maybe with a nice background image
+
+==Security Policy ==
+
+Now comes the difficult part. You'll need to serve a security policy file on port 843. If you are serving from a **nix box I suggest using inetd or xinetd. For example add the following line to inetd.conf:
+
+{{{ 843  stream  tcp        nowait  root    /bin/bash  bash -c 'cat /home/youruser/socketPolicy.xml'}}}
+
+Then create the following file, socketPolicy.xml.
+
+<cross-domain-policy>
+  <site-control permitted-cross-domain-policies="master-only"/>
+  <allow-access-from domain="*" to-ports="6600"/>
+</cross-domain-policy>
+
+^*( This is a pretty *insecure* example. )^
+
+
+Alternatively you can use the *Flash Security Daemon* [http://www.astertools.com/products/opensource/fsd], which is only available for **nix systems at present.
