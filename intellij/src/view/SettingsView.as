@@ -7,7 +7,11 @@ package view
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Quad;
 
+	import flash.events.Event;
+
 	import flash.events.MouseEvent;
+
+	import model.FontCatalog;
 
 	import model.StaticValues;
 
@@ -15,23 +19,35 @@ package view
 
 	import utils.DeviceInfoManager;
 
+	import view.module.TextButton;
+
 	public class SettingsView extends AbstractPage
 	{
 
 		private var _closeButton:CloseIcon;
+		private var _wifiConfButton:TextButton;
 		private var _esp8266SockMngr:Esp8266SocketManager;
 
 		public function SettingsView(pX:int, pY:int, pWidth:uint, pHeight:uint, pPageNumber:int=-1, pBackgroundColor:uint=0x333333FF, pGap:uint=0)
 		{
 			super(pX, pY, pWidth, pHeight, pPageNumber, pBackgroundColor, pGap);
 
-			// SettingsButton
+			// Close button
 			_closeButton = new CloseIcon();
 			_closeButton.width = int(_closeButton.height = width * .06);
 			_closeButton.x = int(width - _closeButton.width - (width * .03));
 			_closeButton.y = int(width * .03);
 			_closeButton.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{hide()});
 			addChild(_closeButton);
+
+			// Wifi configuration button
+			_wifiConfButton = new TextButton(Math.round(width * .8), Math.round(height * .1), FontCatalog.ARIAL, "configurer le wifi", StaticValues.CLR_WENGE, StaticValues.CLR_DIRTY_WHITE);
+			_wifiConfButton.x = Math.round((width - _wifiConfButton.width) / 2);
+			_wifiConfButton.y = Math.round(height * .1);
+			_wifiConfButton.addEventListener(TextButton.BUTTON_TRIGGERED, function(e:Event):void{
+				trace("configurer le wifi");
+			});
+			addChild(_wifiConfButton);
 
 			// Esp8266SocketManager
 			_esp8266SockMngr = new Esp8266SocketManager();
@@ -51,7 +67,9 @@ package view
 
 			var encryptedData = encryptToRot47(data);
 
+			/*
 			var b1:BlueButton = new BlueButton();
+
 			b1.x = 20;
 			b1.y = 20;
 			b1.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{
@@ -75,6 +93,7 @@ package view
 				_esp8266SockMngr.sendData("ping");
 			});
 			addChild(b3);
+			*/
 
 		}
 

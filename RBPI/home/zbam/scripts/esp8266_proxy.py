@@ -12,7 +12,7 @@ from datetime import datetime
 import pyudev
 import time
 
-# regexp for matching any string between four ~ chars
+# regexp that matches any string between ~~~~ and ~~~~ chars
 reg = re.compile(ur'~~~~(.*)~~~~')
 
 # /dev/ttyACM0 for GPIO UART pins
@@ -50,8 +50,7 @@ def watchForHL340PlugChange(action, device):
             disconnectSerial()
 
 def update_wpa_supplicant(ssid, psk):
-    """Updates /home/zbam/wpa_supplicant.conf file with wifi credentials received from
-    client app and then restart tinterfaces"""
+    """Updates /home/zbam/wpa_supplicant.conf file with wifi credentials received from client app and then restart tinterfaces"""
 
     print "Try to update wpa_supplicant.conf…"
 
@@ -66,15 +65,15 @@ def update_wpa_supplicant(ssid, psk):
         f.write("}")
         f.close()
         #os.system("sudo reboot")
-        print "restarting wifi wlan0 interface…"
+        print "wpa_supplicant.conf updated, restarting wifi wlan0 interface…"
         if os.system("sudo ifdown wlan0 && sudo ifup wlan0") == 0:
             ser.write("s_wi-cr_ok\n");
             print "Wifi credentials successfully updated."
         else:
-            ser.write("s_wi-cr_ok_error\n");
+            ser.write("s_wi-cr_error\n");
             print "error while restarting wifi wlan0 interface…"
     except:
-        ser.write("s_wi-cr_ok_error\n");
+        ser.write("s_wi-cr_error\n");
         print "error while updating wpa_supplicant.conf file"
 
 def rot47(s):
@@ -89,7 +88,7 @@ def rot47(s):
     return ''.join(x)
 
 def getWifiNetworks():
-	"""Renvoie un JSON contenant les information des réseaux wifi disponibles"""
+	"""Returns a JSON string with wifi networks infos"""
 	proc = subprocess.Popen('sudo iwlist wlan0 scan 2>/dev/null', shell=True, stdout=subprocess.PIPE, )
 	stdout_str = proc.communicate()[0]
 	stdout_list = stdout_str.split('\n')
