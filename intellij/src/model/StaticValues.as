@@ -10,6 +10,7 @@ package model
 		//public static const MPD_HOST_NAME:String = "192.168.0.15";
 		public static const MPD_HOST_NAME:String = "radialva.local";
         public static const MPD_HOST_PORT:uint = 6600;
+	    public static const ESP8266_URI:String = "ws://192.168.4.1:81";
 
 	    ///////////////////////////////////////////////////////////////////////////////////////////////// GOOGLE ANALYTICS
 	    public static const GOOGLE_ANALYTICS_UA:String = "UA-45019580-12";

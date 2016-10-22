@@ -4,23 +4,14 @@
 package view
 {
 	import com.electrofrog.layout.AbstractPage;
-	import com.electrofrog.utils.encrypting.Base64;
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Quad;
-	import com.hurlant.crypto.Crypto;
-	import com.hurlant.crypto.symmetric.ICipher;
-	import com.hurlant.crypto.symmetric.IPad;
-	import com.hurlant.crypto.symmetric.IVMode;
-	import com.hurlant.crypto.symmetric.NullPad;
-	import com.hurlant.util.Hex;
 
 	import flash.events.MouseEvent;
-	import flash.net.URLLoader;
-	import flash.net.URLRequest;
-	import flash.net.URLRequestMethod;
-	import flash.utils.ByteArray;
 
 	import model.StaticValues;
+
+	import net.Esp8266SocketManager;
 
 	import utils.DeviceInfoManager;
 
@@ -28,6 +19,7 @@ package view
 	{
 
 		private var _closeButton:CloseIcon;
+		private var _esp8266SockMngr:Esp8266SocketManager;
 
 		public function SettingsView(pX:int, pY:int, pWidth:uint, pHeight:uint, pPageNumber:int=-1, pBackgroundColor:uint=0x333333FF, pGap:uint=0)
 		{
@@ -41,7 +33,12 @@ package view
 			_closeButton.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{hide()});
 			addChild(_closeButton);
 
-			var ssid:String = "le_caboulot_digital";
+			// Esp8266SocketManager
+			_esp8266SockMngr = new Esp8266SocketManager();
+			_esp8266SockMngr.connect(StaticValues.ESP8266_URI);
+
+			//var ssid:String = "le_caboulot_digital";
+			var ssid:String = "moins_fort_le_violon";
 			var psk:String = "ezeleezdegue";
 
 			//var ssid:String = rot47("le_caboulot_digital")
@@ -50,19 +47,34 @@ package view
 			//var ssid = encryptToAES128("le_caboulot_digital", StaticValues.ENCRYPTION_KEY, StaticValues.ENCRYPTION_IV);
 			//var psk = encryptToAES128("ezeleezdegue", StaticValues.ENCRYPTION_KEY, StaticValues.ENCRYPTION_IV);
 
-			var data:String = StaticValues.DATA_DELIMITER +
-					'{"ssid":' + '"' + ssid + '",' +
-					'"psk":' + '"' + psk + '"}' +
-					StaticValues.DATA_DELIMITER;
+			var data:String = '{"ssid":' + '"' + ssid + '",' + '"psk":' + '"' + psk + '"}';
 
-			//var encryptedData = encryptToAES128(data, StaticValues.ENCRYPTION_KEY, StaticValues.ENCRYPTION_IV);
 			var encryptedData = encryptToRot47(data);
 
-			var ur:URLRequest = new URLRequest("http://192.168.4.1/" + encryptedData);
-			ur.method = URLRequestMethod.GET;
+			var b1:BlueButton = new BlueButton();
+			b1.x = 20;
+			b1.y = 20;
+			b1.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{
+				_esp8266SockMngr.sendData("g_wi-sc");
+			});
+			addChild(b1);
 
-			var ul:URLLoader = new URLLoader();
-			ul.load(ur);
+			var b2:BlueButton = new BlueButton();
+			b2.x = 120;
+			b2.y = 20;
+			b2.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{
+				//var ur:URLRequest = new URLRequest("http://192.168.4.1/s_wi-cr?d=" + encryptedData);
+				_esp8266SockMngr.sendData("s_wi-cr~~~~" + encryptedData + "~~~~");
+			});
+			addChild(b2);
+
+			var b3:BlueButton = new BlueButton();
+			b3.x = 20;
+			b3.y = 120;
+			b3.addEventListener(MouseEvent.CLICK, function(e:MouseEvent):void{
+				_esp8266SockMngr.sendData("ping");
+			});
+			addChild(b3);
 
 		}
 
@@ -110,6 +122,7 @@ package view
 		}
 
 		//notice that decrKey and decrIV length must be 16 chars long! ex: 1234567890123456
+		/*
 		private function encryptToAES128(input:String, decrKey:String, decrIV:String):String
 		{
 			var inputBA:ByteArray = Hex.toArray(Hex.fromString(input));
@@ -122,6 +135,7 @@ package view
 
 			return Base64.encodeByteArray(inputBA);  //if not use Base64 encode, data would be just byteArray
 		}
+		*/
 
 	}
 }

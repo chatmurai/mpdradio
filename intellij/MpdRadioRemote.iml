@@ -20,6 +20,12 @@
             <entry library-id="8fde36b1-7020-4444-b84b-7655e2d0841e">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="256b5364-b1e1-48b5-a8b3-2f0c0e63124a">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="12dfda93-f516-4208-b5ba-018f589e366e">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="AIR_SDK_22" />
         </dependencies>
@@ -100,6 +106,26 @@
         <properties id="8fde36b1-7020-4444-b84b-7655e2d0841e" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/assets/swc/as3crypto.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="256b5364-b1e1-48b5-a8b3-2f0c0e63124a" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/assets/swc/as3corelib.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="12dfda93-f516-4208-b5ba-018f589e366e" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/assets/swc/gestouch-0.4.3.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
